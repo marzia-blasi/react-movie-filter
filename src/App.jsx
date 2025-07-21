@@ -19,27 +19,26 @@ function App() {
     console.log(searchMovie);
   };
 
+  {
+    /**
   useEffect(() => {
     const filtered = movies.filter((movie) => {
       movie.title.toLocaleLowerCase().includes(searchMovies.toLowerCase());
       setfilterdMovie(filtered);
     });
   }, [searchMovies]);
-
+ */
+  }
   return (
     <>
       <div>
         <input type="text" value={searchMovies} onChange={handleValue} />
-        <ul>
+
+        <select>
           {movies.map(({ title, genre, index }) => {
-            return (
-              <li key={index}>
-                {title}
-                <p>{genre}</p>
-              </li>
-            );
+            return <option key={index}>{genre}</option>;
           })}
-        </ul>
+        </select>
       </div>
     </>
   );
