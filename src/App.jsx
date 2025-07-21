@@ -11,12 +11,19 @@ function App() {
   ];
 
   const [searchMovies, setsearchMovies] = useState("");
+  const [filteredMovie, setfilterdMovie] = useState(movies);
 
   const handleValue = (e) => {
     const searchMovie = e.target.value;
     setsearchMovies(searchMovie);
     console.log(searchMovie);
   };
+
+  useEffect(() => {
+    const filtered = movies.filter((filteredMovie) =>
+      filteredMovie.includes(searchMovies)
+    );
+  }, [searchMovies, filteredMovie]);
 
   return (
     <>
