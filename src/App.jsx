@@ -10,7 +10,22 @@ function App() {
     { title: "Pulp Fiction", genre: "Thriller" },
   ];
 
-  return <></>;
+  return (
+    <>
+      <div>
+        <ul>
+          {movies.map(({ title, genre, index }) => {
+            return (
+              <>
+                <li key={index}>{title}</li>
+                <li key={index}>{genre}</li>
+              </>
+            );
+          })}
+        </ul>
+      </div>
+    </>
+  );
 }
 
 export default App;
