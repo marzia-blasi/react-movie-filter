@@ -20,10 +20,11 @@ function App() {
   };
 
   useEffect(() => {
-    const filtered = movies.filter((filteredMovie) =>
-      filteredMovie.includes(searchMovies)
-    );
-  }, [searchMovies, filteredMovie]);
+    const filtered = movies.filter((movie) => {
+      movie.title.toLocaleLowerCase().includes(searchMovies.toLowerCase());
+      setfilterdMovie(filtered);
+    });
+  }, [searchMovies]);
 
   return (
     <>
